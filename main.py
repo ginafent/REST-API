@@ -1,10 +1,14 @@
 from fastapi import FastAPI, HTTPException
 import psycopg2
 import psycopg2.extras
+import os
 
 app = FastAPI()
 
-DATABASE_URL = "postgresql://appuser:apppassword@localhost:5432/servicedb"
+DATABASE_URL = os.environ.get(
+    "DATABASE_URL",
+    "postgresql://appuser:apppassword@localhost:5432/servicedb"
+)
 
 
 @app.get("/health")

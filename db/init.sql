@@ -18,3 +18,14 @@ CREATE TABLE feedback (
     FOREIGN KEY (serviceID) REFERENCES services(serviceID)
 );
 
+INSERT INTO customers (customerFirstName, customerLastName) VALUES
+    ('Alice', 'Smith'),
+    ('Adam', 'Fenton');
+
+INSERT INTO services (customerID) VALUES
+    (1),
+    (2);
+
+INSERT INTO feedback (serviceID, comment) VALUES
+    (1, 'Good service.'),
+    (2, 'Service is rubbish!!');
